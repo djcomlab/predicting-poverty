@@ -1,7 +1,7 @@
 ## PROCESS LSMS AND DHS DATA ##
 
 #### Preliminaries: Load packages, create new folders, define aggregation functions ####
-setwd('predicting-poverty') # Set working directory to where you downloaded the replication folder
+setwd('/vagrant') # Set working directory to where you downloaded the replication folder
 rm(list=ls())
 library(magrittr)
 library(foreign)
