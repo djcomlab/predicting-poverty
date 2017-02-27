@@ -56,7 +56,7 @@ For all data processing scripts, the user needs to set the working directory to 
 1. Download LSMS data
 	1. Visit the [host website for the World Bank's LSMS-ISA data](http://econ.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTRESEARCH/EXTLSMS/0,,contentMDK:23512006~pagePK:64168445~piPK:64168309~theSitePK:3358997,00.html):
 	2. Download into **data/input/LSMS** the files corresponding to the following country-years:
- 		1. Uganda 2011-2012
+ 		1. Uganda 2011-2012 http://microdata.worldbank.org/index.php/catalog/2059
 		2. Tanzania 2012-13
 		3. Nigeria 2012-13
 		4. Malawi 2013

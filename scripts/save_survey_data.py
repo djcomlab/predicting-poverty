@@ -34,13 +34,15 @@ if __name__ == '__main__':
   ############ DHS ###########
   ############################
 
-  countries = ['nigeria', 'tanzania', 'uganda', 'malawi', 'rwanda']
-  fns = ['../data/output/DHS/Nigeria 2013 DHS (Cluster).txt',
-         '../data/output/DHS/Tanzania 2010 DHS (Cluster).txt',
-         '../data/output/DHS/Uganda 2011 DHS (Cluster).txt',
-         '../data/output/DHS/Malawi 2010 DHS (Cluster).txt',
-         '../data/output/DHS/Rwanda 2010 DHS (Cluster).txt']
-  out_dir = '../data/output/DHS/'
+  # countries = ['nigeria', 'tanzania', 'uganda', 'malawi', 'rwanda']
+  # fns = ['../data/output/DHS/Nigeria 2013 DHS (Cluster).txt',
+  #        '../data/output/DHS/Tanzania 2010 DHS (Cluster).txt',
+  #        '../data/output/DHS/Uganda 2011 DHS (Cluster).txt',
+  #        '../data/output/DHS/Malawi 2010 DHS (Cluster).txt',
+  #        '../data/output/DHS/Rwanda 2010 DHS (Cluster).txt']
+  out_dir = '/vagrant/data/output/DHS/'
+  countries = ['malawi']
+  fns = ['/vagrant/data/output/DHS/Malawi 2010 DHS (Cluster).txt']
   names = ['lats', 'lons', 'assets', 'nightlights', 'households']
   keys = ['lat', 'lon', 'wealthscore', 'nl', 'n']
   retrieve_and_save(countries, fns, out_dir, names, keys, sample=sample)
@@ -49,12 +51,14 @@ if __name__ == '__main__':
   ############ LSMS ##########
   ############################
 
-  countries = ['nigeria', 'tanzania', 'uganda', 'malawi']
-  fns = ['../data/output/LSMS/Nigeria 2013 LSMS (Cluster).txt',
-         '../data/output/LSMS/Tanzania 2013 LSMS (Cluster).txt',
-         '../data/output/LSMS/Uganda 2012 LSMS (Cluster).txt',
-         '../data/output/LSMS/Malawi 2013 LSMS (Cluster).txt']
-  out_dir = '../data/output/LSMS/'
+  # countries = ['nigeria', 'tanzania', 'uganda', 'malawi']
+  # fns = ['../data/output/LSMS/Nigeria 2013 LSMS (Cluster).txt',
+  #        '../data/output/LSMS/Tanzania 2013 LSMS (Cluster).txt',
+  #        '../data/output/LSMS/Uganda 2012 LSMS (Cluster).txt',
+  #        '../data/output/LSMS/Malawi 2013 LSMS (Cluster).txt']
+  out_dir = '/vagrant/data/output/LSMS/'
+  countries = ['malawi']
+  fns = ['/vagrant/data/output/LSMS/Malawi 2013 LSMS (Cluster).txt']
   names = ['lats', 'lons', 'consumptions', 'nightlights', 'households']
   keys = ['lat', 'lon', 'cons', 'nl', 'n']
   retrieve_and_save(countries, fns, out_dir, names, keys, sample=sample)

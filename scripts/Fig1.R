@@ -2,7 +2,7 @@
 
 #### Preliminaries: Load packages ####
 
-setwd('predicting-poverty') # Set working directory to where you downloaded the replication folder
+setwd('/vagrant') # Set working directory to where you downloaded the replication folder
 rm(list=ls())
 library(magrittr)
 library(foreign)
@@ -68,20 +68,20 @@ m2 <- spplot(africa, 'dhsyrs', col.regions = colors,
 
 # Import household-level LSMS data for use in population density graphs
 # The cluster-level data.frame is used as input into the nightlights-consumption plots
-nga.hh <- read.table('data/output/LSMS/Nigeria 2013 LSMS (Household).txt', header = T) %>%
-  subset(is.na(weight)==F)
-nga.hh$weight <- nga.hh$weight/sum(nga.hh$weight)
-nga <- read.table('data/output/LSMS/Nigeria 2013 LSMS (Cluster).txt', header = T)
-
-tza.hh <- read.table('data/output/LSMS/Tanzania 2013 LSMS (Household).txt', header = T) %>%
-  subset(is.na(weight)==F)
-tza.hh$weight <- tza.hh$weight/sum(tza.hh$weight)
-tza <- read.table('data/output/LSMS/Tanzania 2013 LSMS (Cluster).txt', header = T)
-
-uga.hh <- read.table('data/output/LSMS/Uganda 2012 LSMS (Household).txt', header = T) %>%
-  subset(is.na(weight)==F)
-uga.hh$weight <- uga.hh$weight/sum(uga.hh$weight)
-uga <- read.table('data/output/LSMS/Uganda 2012 LSMS (Cluster).txt', header = T)
+#nga.hh <- read.table('data/output/LSMS/Nigeria 2013 LSMS (Household).txt', header = T) %>%
+#  subset(is.na(weight)==F)
+#nga.hh$weight <- nga.hh$weight/sum(nga.hh$weight)
+#nga <- read.table('data/output/LSMS/Nigeria 2013 LSMS (Cluster).txt', header = T)
+#
+#tza.hh <- read.table('data/output/LSMS/Tanzania 2013 LSMS (Household).txt', header = T) %>%
+#  subset(is.na(weight)==F)
+#tza.hh$weight <- tza.hh$weight/sum(tza.hh$weight)
+#tza <- read.table('data/output/LSMS/Tanzania 2013 LSMS (Cluster).txt', header = T)
+#
+#uga.hh <- read.table('data/output/LSMS/Uganda 2012 LSMS (Household).txt', header = T) %>%
+#  subset(is.na(weight)==F)
+#uga.hh$weight <- uga.hh$weight/sum(uga.hh$weight)
+#uga <- read.table('data/output/LSMS/Uganda 2012 LSMS (Cluster).txt', header = T)
 
 mwi.hh <- read.table('data/output/LSMS/Malawi 2013 LSMS (Household).txt', header = T) %>%
   subset(is.na(weight)==F)
@@ -93,7 +93,8 @@ mwi <- read.table('data/output/LSMS/Malawi 2013 LSMS (Cluster).txt', header = T)
 
 #### Producing the final figure ####
 
-pooled <- list(nga, tza, uga, mwi) %>%
+#pooled <- list(nga, tza, uga, mwi) %>%
+pooled <- list(mwi) %>%
   do.call('rbind', .) %>%
   subset(n > 1)
 margin <- range(pooled$cons, na.rm = T)
@@ -141,7 +142,7 @@ twoplots <- function(df, title){
   grid.arrange(p1, p2, heights = c(2/3, 1/3))
 }
 
-graphs <- list(m1, m2, twoplots(nga, 'Nigeria, 2012'), twoplots(tza, 'Tanzania, 2012'), twoplots(uga, 'Uganda, 2011'), twoplots(mwi, 'Malawi, 2013'))
+graphs <- list(m1, m2, twoplots(mwi, 'Malawi, 2013'))
 pdf(file = 'figures/Figure 1.pdf', width = 8, height = 12)
 grid.arrange(grobs = graphs, ncol = 2)
 dev.off()

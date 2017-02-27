@@ -79,16 +79,18 @@ def pixelsToCoords(srcAddr, pixelPairs):
 
 
 if __name__ == '__main__':
-  nightlight_tif = "../data/input/Nightlights/2013/F182013.v4c_web.stable_lights.avg_vis.tif"
+  nightlight_tif = "/vagrant/data/input/Nightlights/2013/F182013.v4c_web.stable_lights.avg_vis.tif"
 
   # DHS
   print("Generating candidate image locations for DHS")
   countries = ['nigeria', 'tanzania', 'uganda', 'malawi', 'rwanda']
-  cluster_loc_dir = '../data/output/DHS'
+  # countries = ['malawi']
+  cluster_loc_dir = '/vagrant/data/output/DHS'
   get_download_locations(countries, cluster_loc_dir, nightlight_tif)
 
   # LSMS
   print("Generating candidate image locations for LSMS")
-  countries = ['nigeria', 'tanzania', 'uganda', 'malawi']
-  cluster_loc_dir = '../data/output/LSMS'
+  # countries = ['nigeria', 'tanzania', 'uganda', 'malawi']
+  countries = ['malawi']
+  cluster_loc_dir = '/vagrant/data/output/LSMS'
   get_download_locations(countries, cluster_loc_dir, nightlight_tif)
